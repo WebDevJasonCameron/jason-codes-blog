@@ -7,27 +7,10 @@ import Layout from './comps/layout/Layout';
 function App() {
 	return (
 		<Routes>
-			<Route
-				index
-				element={
-					<main>
-						<Header />
-						<Post />
-						<Post />
-						<Post />
-					</main>
-				}
-			/>
-			<Route
-				path='/login'
-				element={
-					<main>
-						<Header />
-						<div>login page</div>
-					</main>
-				}
-			/>
-			<Route path='/test' element={<Layout />} />
+			<Route path='/' element={<Layout />}>
+				<Route index element={<Post />} />
+				<Route path={'/login'} element={<div>Login page</div>} />
+			</Route>
 		</Routes>
 	);
 }
