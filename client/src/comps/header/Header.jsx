@@ -1,3 +1,5 @@
+// I would probably change this to Nav
+
 import { Link } from 'react-router-dom';
 
 export default function Header() {
@@ -9,7 +11,6 @@ export default function Header() {
     <nav>
       <Link to='/login'>Login</Link>
       <Link to='/register'>Register</Link>
-      <Link to='/test'>Test</Link>
     </nav>
   </header>
  ) 
