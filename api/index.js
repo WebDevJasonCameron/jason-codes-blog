@@ -1,6 +1,3 @@
-const MONGOOSE_KEY =
-	'mongodb+srv://devjasoncameron:7*WQY*RmqwQWHCRpU.@cluster0.3pzfreh.mongodb.net/?retryWrites=true&w=majority';
-
 const express = require('express');
 const cors = require('cors');
 const { default: mongoose } = require('mongoose');
@@ -10,7 +7,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect(MONGOOSE_KEY);
+mongoose.connect(
+	'mongodb+srv://devjasoncameron: XXXXXX @blogcluster.suor1fn.mongodb.net/?retryWrites=true&w=majority'
+);
 
 app.post('/register', async (req, res) => {
 	const { username, password } = req.body;
