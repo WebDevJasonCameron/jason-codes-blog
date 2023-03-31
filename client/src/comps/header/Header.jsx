@@ -3,6 +3,9 @@
 import { Link } from 'react-router-dom';
 
 export default function Header() {
+
+  const word = "Yo"
+
   return (
     <header>
     <Link to='/' className='logo'>
@@ -12,6 +15,7 @@ export default function Header() {
       <Link to='/login'>Login</Link>
       <Link to='/register'>Register</Link>
     </nav>
+    {console.log(word)}
   </header>
  ) 
 }
