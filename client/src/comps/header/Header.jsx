@@ -1,10 +1,9 @@
 // I would probably change this to Nav
 
 import { Link } from 'react-router-dom';
+import { myVariable } from '../../keys/clientKeys';
 
 export default function Header() {
-
-  const word = "Yo"
 
   return (
     <header>
@@ -15,7 +14,7 @@ export default function Header() {
       <Link to='/login'>Login</Link>
       <Link to='/register'>Register</Link>
     </nav>
-    {console.log(word)}
+    {console.log(myVariable)}
   </header>
  ) 
 }
