@@ -6,3 +6,9 @@ To bring back mongo: nodemon index.js
 To bring back client: npm start
 
 had to add cors: npm add cors
+
+## Other Things Used
+
+- nodemon
+- bcrypt [https://www.npmjs.com/package/bcrypt]
+- jsonwebtoken
