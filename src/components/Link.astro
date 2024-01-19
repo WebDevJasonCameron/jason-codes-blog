@@ -1,11 +1,15 @@
 ---
+// LIBs
+import { Icon } from 'astro-icon/components';
+
+// PROPs
 interface Props {
     text: string;
     href: string;
-    style: "primary" | "second";
+    style: "primary" | "secondary";
     icon?: {
         name: string;
-        side: "left" | "right"
+        side: "left" | "right";
     };
     isFilled?: boolean;
     borderVisible?: boolean;
@@ -16,6 +20,7 @@ const {
     text,
     href,
     style,
+    icon,
     isFilled = true,
     borderVisible = false,
     classes,
@@ -29,6 +34,22 @@ const {
     classes,
     style,
     { filled: isFilled, bordered: borderVisible }
-]}>
+   ]}
+   {...rest}
+>
+
+    {
+        icon && icon.side === "left" && (
+        <Icon name="{icon.name}" height="24" width="24" />
+        )
+    }
+
+    <span>{text}</span>
+
+    {
+        icon && icon.side === "right" && (
+                    <Icon name="{icon.name}" height="24" width="24" />
+        )
+    }
 
 </a>
