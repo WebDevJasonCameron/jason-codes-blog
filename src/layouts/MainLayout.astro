@@ -1,6 +1,7 @@
 ---
 // COMPs
 import MainHead from './MainHead.astro';
+import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 
 // STYLEs
@@ -15,6 +16,7 @@ const {
 
 <html lang='en'>
 	<MainHead {title} {description} />
+	<Nav />
 	<body>
 		<slot>Default Text</slot>
 		<Footer />
