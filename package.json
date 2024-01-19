@@ -2,6 +2,10 @@
   "name": "",
   "type": "module",
   "version": "0.0.1",
+  "private": true,
+  "browserslist": [
+    "defaults"
+  ],
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -12,6 +16,8 @@
   "dependencies": {
     "@astrojs/check": "^0.4.1",
     "astro": "^4.2.1",
+    "postcss": "^8.4.33",
+    "postcss-preset-env": "^9.3.0",
     "typescript": "^5.3.3"
   }
 }

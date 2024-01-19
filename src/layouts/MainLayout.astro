@@ -1,11 +1,12 @@
 ---
+// COMPs
 import MainHead from './MainHead.astro';
+import Footer from '../components/Footer.astro';
 
-interface Props {
-	title?: string;
-	description?: string;
-}
+// STYLEs
+import '../styles/global.css';
 
+// PROPs
 const {
 	title = "Jason's Blog",
 	description = "This is where I try to contemplate and put into words the things I've coded.",
@@ -16,5 +17,6 @@ const {
 	<MainHead {title} {description} />
 	<body>
 		<slot>Default Text</slot>
+		<Footer />
 	</body>
 </html>
