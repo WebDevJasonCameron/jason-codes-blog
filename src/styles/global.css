@@ -428,7 +428,7 @@ button {
   }
 }
 
-/* posts */
+/* blog */
 
 .post-container {
   margin-block: var(--space-md);
@@ -500,7 +500,7 @@ button {
   }
 }
 
-/* posts */
+/* blog */
 header {
   display: grid;
   place-items: center;
