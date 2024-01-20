@@ -1,9 +1,20 @@
 ---
-// Component Imports
+// Comps
 import MainLayout from '../../layouts/MainLayout.astro';
 import PostCard from "../../components/PostCard.astro";
 
+// UTILs
+import { formatBlogPosts } from "../../js/utils";
+
+// VARs
 const allPosts = await Astro.glob("../posts/*.md");
+const filterParams = {
+    filterOutDrafts: true,
+    filterOutFuturePosts: true,
+    sortByDate: true,
+    limit: undefined,
+}
+const formattedPosts = formatBlogPosts(allPosts, filterParams);
 ---
 
 <MainLayout title='My Blog'>
@@ -11,10 +22,9 @@ const allPosts = await Astro.glob("../posts/*.md");
         <h1 class="h1">New Blog Posts</h1>
         <div class="post-container">
             {
-                allPosts.map((post) =>
+                formattedPosts.map((post) =>
                     ( <PostCard frontmatter={post.frontmatter} url={post.url} tagType="h2" />))
             }
         </div>
     </section>
-
 </MainLayout>

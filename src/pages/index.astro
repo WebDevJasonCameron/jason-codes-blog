@@ -1,8 +1,51 @@
 ---
 // Component Imports
 import MainLayout from '../layouts/MainLayout.astro';
+import PostCard from "../components/PostCard.astro";
+import Link from "../components/Link.astro"
+
+// UTILs
+import { formatBlogPosts } from "../js/utils";
+import Link from "../components/Link.astro";
+
+// VARs
+const allPosts = await Astro.glob("./posts/**/*.md");
+const filterParams = {
+	filterOutDrafts: true,
+	filterOutFuturePosts: true,
+	sortByDate: true,
+	limit: 3,
+}
+const formattedPosts = formatBlogPosts(allPosts, filterParams);
 ---
 
 <MainLayout title='My Blog'>
-	<p>Hello from Home</p>
+	<section class="container about" aria-label="About Me">
+		<img src="/images/headshot.jpg"
+			 alt="My headshot"
+			 width="200"
+			 height="330" />
+		<div class="content">
+			<h1 class="h1">
+				My Blog
+			</h1>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, voluptatibus.
+			</p>
+			<Link href="/about/"
+				  style="secondary"
+				  text="👋 About Me"
+			/>
+		</div>
+	</section>
+
+	<section class="container" aria-label="New Blog Posts">
+		<h2 class="h1">New Blog Posts</h2>
+		<div class="post-container">
+			{
+				formattedPosts.map((post) =>
+					( <PostCard frontmatter={post.frontmatter} url={post.url} tagType="h3" />))
+			}
+		</div>
+	</section>
 </MainLayout>
