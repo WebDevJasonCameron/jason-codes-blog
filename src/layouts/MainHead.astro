@@ -1,16 +1,27 @@
 ---
 // COMPs
+import Seo from "../components/Seo.astro";
 
 // PROPs
-const { title, description } = Astro.props;
+const { title, description, image, frontmatter, robots  } = Astro.props;
 ---
 
 <head>
 	<meta charset='utf-8' />
+	<!-- Favicon -->
 	<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
 	<meta name='viewport' content='width=device-width' />
 	<meta name='generator' content={Astro.generator} />
 	<meta name='description' content={description} />
+	<!-- SEO -->
+	<Seo
+		{title}
+		{description}
+		{image}
+		{frontmatter}
+		{robots}
+		url={Astro.url}
+	/>
 	<!-- Google Fonts -->
 	<link rel='preconnect' href='https://fonts.googleapis.com' />
 	<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />

@@ -11,11 +11,20 @@ import '../styles/global.css';
 const {
 	title = "Jason's Blog",
 	description = "This is where I try to contemplate and put into words the things I've coded.",
+	image,
+	frontmatter,
+	robots,
 } = Astro.props;
 ---
 
 <html lang='en'>
-	<MainHead {title} {description} />
+	<MainHead
+		{title}
+		{description}
+		{image}
+		{frontmatter}
+		{robots}
+	/>
 	<Nav />
 	<body>
 		<main>

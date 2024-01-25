@@ -10,6 +10,7 @@ const { frontmatter } = Astro.props;
 
 // UTILs
 import { formatBlogPosts } from "../js/utils";
+import Seo from "../components/Seo.astro";
 
 // VARs
 const { title, description, date, category, author, image } = frontmatter;
@@ -27,7 +28,13 @@ const relatedPosts = formattedPosts.filter((post) => post.frontmatter.category.t
 console.log(relatedPosts)
 ---
 
-<MainLayout title={title} {description}>
+<MainLayout
+        {title}
+        {description}
+        image = {frontmatter.image}
+        {frontmatter}
+        robots = {frontmatter.robots}
+>
     <header>
         <PostHeader
             {title} {description} {date} {category} {author} {image}
