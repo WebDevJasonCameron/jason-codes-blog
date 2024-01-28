@@ -20,22 +20,27 @@ const formattedPosts = formatBlogPosts(allPosts, filterParams);
 
 <MainLayout title='My Blog'>
 	<section class="container about" aria-label="About Me">
-		<img src="/images/avatar_0001.png"
-			 alt="My headshot"
-			 width="200"
-			 height="330" />
-		<div class="content">
-			<h1 class="h1">
-				My Blog
-			</h1>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, voluptatibus.
-			</p>
-			<Link href="/about/"
-				  style="secondary"
-				  text="👋 About Me"
-			/>
+		<div class="flex md:flex-row md:justify-between md:space-x-10 flex-col items-center space-y-5">
+			<img x
+				 src="/images/avatar_0001.png"
+				 alt="My headshot"
+				 width="200"
+				 height="330" />
+			<div class="content ">
+				<h1 class="h1">
+					Jason Codes
+				</h1>
+				<p>
+					<span class="font-bold font-mono">This week's Question: </span>What Blog Stack is best for the programmer?
+				</p>
+				<Link class="w-11 h-5"
+					  href="/about/"
+					  style="secondary"
+					  text="Who am I?"
+				/>
+			</div>
 		</div>
+
 	</section>
 
 	<section class="container" aria-label="New Blog Posts">

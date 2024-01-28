@@ -37,10 +37,10 @@ h6 {
   --_hue: 235;
 
   /* Light Mode */
-  --bkg--light: var(--_hue) 25% 97%;
-  --txt--light: var(--_hue) 40% 5%;
-  --accent--light: var(--_hue) 55% 50%;
-  --muted--light: var(--_hue) 30% 99%;
+  --bkg--light: var(--_hue) 5% 50%;
+  --txt--light: var(--_hue) 1% 99%;
+  --accent--light: var(--_hue) 60% 80%;
+  --muted--light: var(--_hue) 20% 25%;
   /* Dark Mode */
   --bkg--dark: var(--_hue) 15% 10%;
   --txt--dark: var(--_hue) 20% 85%;
@@ -363,7 +363,7 @@ button {
 [aria-label="Blog pages"] {
   display: flex;
   gap: var(--space-sm);
-  justify-content: center;
+  justify-content: left;
 }
 
 /* footer */
@@ -524,6 +524,10 @@ header {
   margin-inline: auto;
   width: 100%;
   max-width: 1500px;
+
+  p, pre {
+    text-align: left;
+  }
 
   & div {
     display: grid;
