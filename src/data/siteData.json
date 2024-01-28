@@ -2,7 +2,7 @@
   "title": "My Astro Blog",
   "description": "My musings about the Astro framework",
   "image": {
-    "src": "/images/image-default.jpg",
+    "src": "/images/flat_raccoon_logo.png",
     "alt": "My Astro Blog"
   }
 }
